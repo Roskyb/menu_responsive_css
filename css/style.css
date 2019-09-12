@@ -1,0 +1,104 @@
+* {
+    margin: 0%;
+    pading: 0%;
+}
+
+
+.navbar{
+    display: flex;
+    background: #3558f5;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.navbar a{
+    font-size: 200%;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 10px;
+}
+
+.navbar a:hover{
+    background-color: white;
+    color: black;
+}
+
+
+/* 
+    Les ponemos display: none fuera del query para que
+    en la versión de escritorio no se pueda ver.
+*/
+
+#hamburger{
+    display: none;
+}
+
+/* #toggler{
+    display: none
+} */
+
+
+@media screen and (max-width: 758px){
+    
+
+    /* 
+        Con esto cuando la página se cargue en un
+        dispositivo movil no aparecera el menu
+    */
+    .navbar{
+        display: none;
+    }
+
+
+    /* 
+        El elemento hamburguer lo utilizaremos para simular
+        el menu ya que esta oculto, por eso le damos unas
+        propiedades parecidas
+    */
+
+    #hamburger{
+        display: flex;
+        height: 40px;
+        padding: 2%;
+        background: #3558f5;
+        justify-content: flex-end;
+    }
+
+    /* 
+        El label sera el boton en si, con el atributo
+        for que le podemos poner al label que apunta
+        directamente al input (que esta oculto) podemos 
+        activarlo y desactivarlo.
+    */
+
+    #hamburger label{
+        /* ASPECTO DEL BOTON */
+        border: 1px white solid ;
+        width: 45px;
+        height: 45;
+        border-radius: 5px;
+        /* Propiedades para centrar los span que lleva dentro */
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+    }
+
+    #hamburger label span{
+        /* Con estas propiedades los span imitaran unas rayas */
+        background-color:white;
+        height: 5px;
+        width: 90%;
+        margin: 2px;        
+    }
+
+
+
+    #toggler:checked + .navbar{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
